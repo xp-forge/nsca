@@ -1,2 +1,15 @@
 nsca ChangeLog
 ========================================================================
+
+* QA-Release 2010-10-21 = 2.1.7 @thekid
+* QA-Release 2010-04-15 = 2.1.6 @kiesel
+* Fix for crc32 and refactoring 2010-03-04 = 2.1.6 @kiesel
+* QA-Release 2009-10-19 = 2.1.5 @kiesel
+* QA-Release 2009-10-17 = 2.1.4 @thekid
+* QA-Release 2008-03-22 = 2.1.3 @thekid
+* Fix for domain namaes, 2007-11-24 = 2.1.2 @kiesel
+* Allow leading dot for domains, 2007-05-23 = 2.1.1 @kiesel
+* Added heartbeat class, NscaClient timeouts 2007-05-16 = 2.1.0 @kiesel
+* PHP 5 migration = 2.0.0 @kiesel 
+* New nameOfStatus() method, 2003-12-30 = 1.0.1 @thekid
+* Initial release 2003-09-10 = 1.0.0 @thekid
