@@ -4,6 +4,11 @@ use peer\Socket;
 use security\checksum\CRC32;
 use lang\MethodNotImplementedException;
 
+define('NSCA_VERSION_2',  2);
+define('NSCA_VERSION_3',  3);
+define('NSCA_CRYPT_NONE', 0x0000);
+define('NSCA_CRYPT_XOR',  0x0001);
+
 /**
  * NSCA (Nagios Service Check Acceptor) Client. Send passive checks for Nagios.
  *
