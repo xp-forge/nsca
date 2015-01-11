@@ -1,34 +1,33 @@
-<?php
-/* This class is part of the XP framework
+<?php namespace org\nagios\unittest;
+
+use org\nagios\nsca\Heartbeat;
+
+/**
+ * Test heartbeat class
  *
- * $Id$ 
+ * @see   xp://org.nagios.nsca.Heartbeat
  */
- 
-  uses(
-    'unittest.TestCase',
-    'org.nagios.nsca.Heartbeat'
-  );
+class HeartbeatTest extends \unittest\TestCase {
+  private $fixture;
 
   /**
-   * Test heartbeat class
+   * Creates fixture
    *
-   * @see      xp://org.nagios.nsca.Heartbeat
-   * @purpose  TestCase
+   * @return void
    */
-  class HeartbeatTest extends TestCase {
-    
-    /**
-     * Check that the hostname is calculated correctly
-     *
-     */
-    #[@test]
-    public function domainSuffix() {
-      $beat= new Heartbeat();
-      $beat->setup('nagios://nagios.xp-framework.net:5667/servicename?hostname=client&domain=.xp-framework.net');
-      $this->assertEquals('client.xp-framework.net', $beat->host);
-
-      $beat->setup('nagios://nagios.xp-framework.net:5667/servicename?hostname=client&domain=xp-framework.net');
-      $this->assertEquals('client.xp-framework.net', $beat->host);
-    }
+  public function setUp() {
+    $this->fixture= new Heartbeat();
   }
-?>
+  
+  #[@test]
+  public function domain() {
+    $this->fixture->setup('nagios://nagios.xp-framework.net:5667/servicename?hostname=client&domain=xp-framework.net');
+    $this->assertEquals('client.xp-framework.net', $this->fixture->host);
+  }
+
+  #[@test]
+  public function domain_with_leading_dot() {
+    $this->fixture->setup('nagios://nagios.xp-framework.net:5667/servicename?hostname=client&domain=xp-framework.net');
+    $this->assertEquals('client.xp-framework.net', $this->fixture->host);
+  }
+}
