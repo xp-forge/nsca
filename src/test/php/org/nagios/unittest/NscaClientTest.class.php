@@ -2,6 +2,7 @@
 
 use org\nagios\nsca\NscaClient;
 use org\nagios\nsca\NscaMessage;
+use org\nagios\nsca\NscaProtocol;
 
 /**
  * TestCase
@@ -10,7 +11,7 @@ class NscaClientTest extends \unittest\TestCase {
 
   #[@test]
   public function encrypt() {
-    $client= new NscaClient('nagios.xp-framework.net', 5667, NSCA_VERSION_3, NSCA_CRYPT_XOR);
+    $client= new NscaClient('nagios.xp-framework.net', 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR);
     $client->setTimestamp(base64_decode('S4/Vfw=='));
     $client->setXorKey(base64_decode(
       'enBVWg+sbQJRHBp4YmoAd14qYPF1EwahKFmzQGwwfOah0UGxfq6zz8vNSC03SKW'.

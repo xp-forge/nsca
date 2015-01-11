@@ -4,6 +4,9 @@ nsca ChangeLog
 ## 3.0.0 / 2015-01-11
 
 * Heads up: Changed NSCA to depend on XP6 core (@thekid)
+* Heads up: Changed defines for encryption and protocol version to class
+  constants (@thekid)
+* Converted code base to PHP 5.3 namespaces - @thekid
 
 ## 2.1.3 / 2010-03-04
 
