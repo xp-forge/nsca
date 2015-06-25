@@ -48,10 +48,10 @@ class NscaClient extends \lang\Object {
   /**
    * Constructor
    *
-   * @param   string host the host the NSCA server is running on
-   * @param   int port
-   * @param   int version default NSCA_VERSION_3
-   * @param   int cryptmethod default NSCA_CRYPT_XOR
+   * @param   string $host the host the NSCA server is running on
+   * @param   int $port
+   * @param   int $version default NSCA_VERSION_3
+   * @param   int $cryptmethod default NSCA_CRYPT_XOR
    */
   public function __construct(
     $host, 
@@ -68,7 +68,7 @@ class NscaClient extends \lang\Object {
   /**
    * Set Version
    *
-   * @param   int version
+   * @param   int $version
    */
   public function setVersion($version) {
     $this->version= $version;
@@ -86,7 +86,7 @@ class NscaClient extends \lang\Object {
   /**
    * Set Cryptmethod
    *
-   * @param   int cryptmethod
+   * @param   int $cryptmethod
    */
   public function setCryptmethod($cryptmethod) {
     $this->cryptmethod= $cryptmethod;
@@ -104,7 +104,7 @@ class NscaClient extends \lang\Object {
   /**
    * Set read Timeout
    *
-   * @param   int timeout
+   * @param   int $timeout
    */
   public function setTimeout($timeout) {
     $this->timeout= $timeout;
@@ -137,7 +137,7 @@ class NscaClient extends \lang\Object {
   /**
    * Set timestamp
    *
-   * @param   string key
+   * @param   string $key
    * @throws  lang.IllegalArgumentException if length of data is invalid
    */
   public function setTimestamp($key) {
@@ -150,7 +150,7 @@ class NscaClient extends \lang\Object {
   /**
    * Set XOR key
    *
-   * @param   string key
+   * @param   string $key
    * @throws  lang.IllegalArgumentException if length of data is invalid
    */
   public function setXorKey($key) {
@@ -204,8 +204,8 @@ class NscaClient extends \lang\Object {
   /**
    * Helper method which packs the message 
    *
-   * @param   string crc
-   * @param   org.nagios.nsca.NscaMessage message
+   * @param   string $crc
+   * @param   org.nagios.nsca.NscaMessage $message
    * @return  string packed data
    */
   public function pack($crc, $message) {
@@ -224,7 +224,7 @@ class NscaClient extends \lang\Object {
   /**
    * Helper method which encrypts data
    *
-   * @param   string data
+   * @param   string $data
    * @return  string encrypted data
    * @throws  lang.MethodNotImplementedException in case the encryption method is not supported
    */
@@ -251,10 +251,11 @@ class NscaClient extends \lang\Object {
   /**
    * Prepare data to be sent
    *
-   * @param   org.nagios.nsca.NscaMessage message
+   * @param   org.nagios.nsca.NscaMessage $message
    * @return  string
    */
   public function prepare(NscaMessage $message) {
+
     // Calculate CRC32 checksum, then build the final packet with the sig
     // and encrypt it using defined crypt method
     return $this->encrypt($this->pack(CRC32::fromString($this->pack(0, $message))->asInt32(), $message));
@@ -263,7 +264,7 @@ class NscaClient extends \lang\Object {
   /**
    * Send a NSCA message to the server
    *
-   * @param   org.nagios.nsca.NscaMessage message
+   * @param   org.nagios.nsca.NscaMessage $message
    * @return  bool
    * @throws  lang.IllegalStateException
    */
