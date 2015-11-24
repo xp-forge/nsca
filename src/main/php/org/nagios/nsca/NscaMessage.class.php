@@ -87,7 +87,7 @@ class NscaMessage extends \lang\Object {
   /**
    * Set Status
    *
-   * @param   int status one of NSCA_* constants
+   * @param   int status one of NscaProtocol's class constants OK, WARN, ERROR and UNKNOWN
    */
   public function setStatus($status) {
     $this->status= $status;
@@ -96,7 +96,7 @@ class NscaMessage extends \lang\Object {
   /**
    * Get Status
    *
-   * @return  int one of NSCA_* constants
+   * @return  int
    */
   public function getStatus() {
     return $this->status;

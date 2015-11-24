@@ -21,7 +21,7 @@ class NscaClientTest extends \unittest\TestCase {
     $message= new NscaMessage(
       'client.xp-framework.net',
       'testcase',
-      NSCA_OK,
+      NscaProtocol::OK,
       'Test message'
     );
     $this->assertEquals(
