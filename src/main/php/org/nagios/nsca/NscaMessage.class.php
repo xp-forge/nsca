@@ -35,6 +35,7 @@ class NscaMessage extends \lang\Object {
   /**
    * Retrieve a status' name
    *
+   * @deprecated Use NscaProtocol::statusName()
    * @param   int status
    * @return  string name
    */
