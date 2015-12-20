@@ -18,6 +18,7 @@ Example
 ```php
 use org\nagios\nsca\NscaClient;
 use org\nagios\nsca\NscaMessage;
+use org\nagios\nsca\NscaProtocol;
 
 $c= new NscaClient('nagios.example.com');
 $c->connect();
@@ -25,13 +26,13 @@ $c->connect();
 $c->send(new NscaMessage(
   'soap1.example.com', 
   'queue_check', 
-  NSCA_OK, 
+  NscaProtocol::OK,
   'Up and running'
 ));
 $c->send(new NscaMessage(
   'soap1.example.com', 
   'queue_check', 
-  NSCA_ERROR, 
+  NscaProtocol::ERROR,
   'No answer on port 80 after 2 seconds'
 ));
 

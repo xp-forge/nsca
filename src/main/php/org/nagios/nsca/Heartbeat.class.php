@@ -25,7 +25,7 @@ use IOException;
  * ...
  *
  * // Program exit
- * Heartbeat::getInstance()->send(NSCA_OK, 'Service ran successfully.');
+ * Heartbeat::getInstance()->send(NscaProtcol::OK, 'Service ran successfully.');
  * ```
  *
  * @see      http://nagios.org/
@@ -74,7 +74,7 @@ class Heartbeat extends \lang\Object {
    * to be able to handle it in other means, the sendRaw() method has been introduced
    * which is used internally, too.
    *
-   * @param   int status status of service (one of NSCA_OK, NSCA_WARN, NSCA_ERROR, NSCA_UNKNOWN)
+   * @param   int status status of service (one of NscaProtocol's constants OK, WARN, ERROR, UNKNOWN)
    * @param   string message default ''
    */
   public function emit($status, $message= '') {
@@ -87,7 +87,7 @@ class Heartbeat extends \lang\Object {
   /**
    * Sends a heartbeat to nagios
    *
-   * @param   int status status of service (one of NSCA_OK, NSCA_WARN, NSCA_ERROR, NSCA_UNKNOWN)
+   * @param   int status status of service (one of NscaProtocol's constants OK, WARN, ERROR, UNKNOWN)
    * @param   string message default ''
    * @throws  io.IOException in case
    */

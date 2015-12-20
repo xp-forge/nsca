@@ -8,6 +8,12 @@ nsca ChangeLog
 * **Heads up: Dropped PHP 5.4 support**. *Note: As the main source is not
   touched, unofficial PHP 5.4 support is still available though not tested
   with Travis-CI*.
+
+## 3.1.0 / 2015-11-24
+
+* Added class constants OK, WARN, ERROR and UNKNOWN to NscaProtocol. These
+  supersede the NSCA_* global constants, which can be considered deprecated
+  at the same time.
   (@thekid)
 
 ## 3.0.1 / 2015-02-12
