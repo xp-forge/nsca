@@ -3,6 +3,12 @@ nsca ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 4.0.1 / 2016-01-23
+
+* Fix code to use `nameof()` instead of the deprecated `getClassName()`
+  method from lang.Generic. See xp-framework/core#120
+  (@thekid)
+
 ## 4.0.0 / 2015-12-20
 
 * **Heads up: Dropped PHP 5.4 support**. *Note: As the main source is not

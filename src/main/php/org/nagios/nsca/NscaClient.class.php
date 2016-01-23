@@ -179,7 +179,7 @@ class NscaClient extends \lang\Object {
       "  [timestamp]   (%d bytes) %s\n".
       "  [xorkey]      (%d bytes) %s\n".
       "}\n",
-      $this->getClassName(),
+      nameof($this),
       $this->sock->host,
       $this->sock->port,
       $this->version,
