@@ -3,7 +3,7 @@
 use lang\System;
 use util\log\Logger;
 use peer\URL;
-use IOException;
+use io\IOException;
 
 /**
  * Heartbeat sender.

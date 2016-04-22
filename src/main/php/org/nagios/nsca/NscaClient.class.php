@@ -3,6 +3,8 @@
 use peer\Socket;
 use security\checksum\CRC32;
 use lang\MethodNotImplementedException;
+use lang\IllegalStateException;
+use lang\IllegalArgumentException;
 
 define('NSCA_VERSION_2',  2);
 define('NSCA_VERSION_3',  3);
