@@ -14,7 +14,7 @@ define('NSCA_CRYPT_XOR',  0x0001);
 /**
  * NSCA (Nagios Service Check Acceptor) Client. Send passive checks for Nagios.
  *
- * ```
+ * ```php
  * $c= new NscaClient('nagios.example.com');
  * $c->connect();
  * $c->send(new NscaMessage(
