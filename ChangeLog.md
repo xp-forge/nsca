@@ -3,6 +3,8 @@ nsca ChangeLog
 
 ## ?.?.? / ????-??-??
 
+* Fixed exception handling in HeartBeat and NscaClient classes - @kiesel
+
 ## 5.0.0 / 2016-02-21
 
 * Added version compatibility with XP 7 - @thekid
