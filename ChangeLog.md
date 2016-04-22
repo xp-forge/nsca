@@ -3,6 +3,8 @@ nsca ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 5.0.1 / 2016-04-22
+
 * Fixed exception handling in HeartBeat and NscaClient classes - @kiesel
 
 ## 5.0.0 / 2016-02-21
