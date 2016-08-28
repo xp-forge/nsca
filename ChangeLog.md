@@ -6,6 +6,9 @@ nsca ChangeLog
 ## 5.1.0 / 2016-08-28
 
 * Added forward compatibility with XP 8.0.0 - @thekid
+
+## 5.0.1 / 2016-04-22
+
 * Fixed exception handling in HeartBeat and NscaClient classes - @kiesel
 
 ## 5.0.0 / 2016-02-21
