@@ -53,13 +53,13 @@ class NscaClient extends \lang\Object {
    * @param   string $host the host the NSCA server is running on
    * @param   int $port
    * @param   int $version default NSCA_VERSION_3
-   * @param   int $cryptmethod default NSCA_CRYPT_XOR
+   * @param   int $cryptmethod default CRYPT_XOR
    */
   public function __construct(
     $host, 
     $port= 5667, 
     $version= NscaProtocol::VERSION_3, 
-    $cryptmethod= NscaProtocol::NSCA_CRYPT_XOR
+    $cryptmethod= NscaProtocol::CRYPT_XOR
   ) {
     
     $this->sock= new Socket($host, $port);
