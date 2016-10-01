@@ -4,9 +4,6 @@ use org\nagios\nsca\NscaClient;
 use org\nagios\nsca\NscaMessage;
 use org\nagios\nsca\NscaProtocol;
 
-/**
- * TestCase
- */
 class NscaClientTest extends \unittest\TestCase {
   const NAGIOS = 'nagios.example.com';
 
@@ -73,12 +70,8 @@ class NscaClientTest extends \unittest\TestCase {
       'WcwaI6BqOikPnPoNTbv86ENF7wVAqdSD1QmgjerHJESTPmQ3qKJctD9WxY0SwnV'.
       'SCGRbTQ4vzOc5cXEkNJlsy9vU/4B3XDi2tv5Dxby5G8kg='
     ));
-    $message= new NscaMessage(
-      'client.xp-framework.net',
-      'testcase',
-      NscaProtocol::OK,
-      'Test message'
-    );
+    $message= new NscaMessage('client.xp-framework.net', 'testcase', NscaProtocol::OK, 'Test message');
+
     $this->assertEquals(
       'enNVWqUY7wkak88HYmpjGzdPDoVba3aMTivSLQlHE5TK/y/UCq6zz8vNSC03SKW'.
       'WcwaI6BqOikPnPoNTbv86ENF7wVAqdSD1QmgjerHJZUG87W6LW/ItD9WxY0SwnV'.
