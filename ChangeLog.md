@@ -3,6 +3,10 @@ nsca ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 5.1.1 / 2016-10-01
+
+* Fixed issue #1: Wrong constant name - @emil-nasso, @thekid
+
 ## 5.1.0 / 2016-08-28
 
 * Added forward compatibility with XP 8.0.0 - @thekid

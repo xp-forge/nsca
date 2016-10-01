@@ -10,6 +10,26 @@ use org\nagios\nsca\NscaProtocol;
 class NscaClientTest extends \unittest\TestCase {
 
   #[@test]
+  public function can_create_with_host() {
+    $client= new NscaClient('nagios.xp-framework.net');
+  }
+
+  #[@test]
+  public function can_create_with_host_and_port() {
+    $client= new NscaClient('nagios.xp-framework.net', 5667);
+  }
+
+  #[@test]
+  public function can_create_with_host_port_and_version() {
+    $client= new NscaClient('nagios.xp-framework.net', 5667,  NscaProtocol::VERSION_3);
+  }
+
+  #[@test]
+  public function can_create_with_host_port_and_version_and_crypt() {
+    $client= new NscaClient('nagios.xp-framework.net', 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR);
+  }
+
+  #[@test]
   public function encrypt() {
     $client= new NscaClient('nagios.xp-framework.net', 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR);
     $client->setTimestamp(base64_decode('S4/Vfw=='));
