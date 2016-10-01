@@ -8,30 +8,65 @@ use org\nagios\nsca\NscaProtocol;
  * TestCase
  */
 class NscaClientTest extends \unittest\TestCase {
+  const NAGIOS = 'nagios.example.com';
 
   #[@test]
   public function can_create_with_host() {
-    $client= new NscaClient('nagios.xp-framework.net');
+    new NscaClient(self::NAGIOS);
   }
 
   #[@test]
   public function can_create_with_host_and_port() {
-    $client= new NscaClient('nagios.xp-framework.net', 5667);
+    new NscaClient(self::NAGIOS, 5667);
   }
 
   #[@test]
   public function can_create_with_host_port_and_version() {
-    $client= new NscaClient('nagios.xp-framework.net', 5667,  NscaProtocol::VERSION_3);
+    new NscaClient(self::NAGIOS, 5667,  NscaProtocol::VERSION_3);
   }
 
   #[@test]
   public function can_create_with_host_port_and_version_and_crypt() {
-    $client= new NscaClient('nagios.xp-framework.net', 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR);
+    new NscaClient(self::NAGIOS, 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR);
+  }
+
+  #[@test]
+  public function version() {
+    $this->assertEquals(NscaProtocol::VERSION_3, (new NscaClient(self::NAGIOS, 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR))->getVersion());
+  }
+
+  #[@test]
+  public function version_can_be_modified() {
+    $fixture= new NscaClient(self::NAGIOS);
+    $fixture->setVersion(NscaProtocol::VERSION_2);
+    $this->assertEquals(NscaProtocol::VERSION_2, $fixture->getVersion());
+  }
+
+  #[@test]
+  public function version_defaults_to_3() {
+    $this->assertEquals(NscaProtocol::VERSION_3, (new NscaClient(self::NAGIOS))->getVersion());
+  }
+
+  #[@test]
+  public function crypt_method() {
+    $this->assertEquals(NscaProtocol::CRYPT_XOR, (new NscaClient(self::NAGIOS, 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR))->getCryptMethod());
+  }
+
+  #[@test]
+  public function crypt_method_can_be_modified() {
+    $fixture= new NscaClient(self::NAGIOS);
+    $fixture->setCryptMethod(NscaProtocol::CRYPT_NONE);
+    $this->assertEquals(NscaProtocol::CRYPT_NONE, $fixture->getCryptMethod());
+  }
+
+  #[@test]
+  public function crypt_method_defaults_to_xor() {
+    $this->assertEquals(NscaProtocol::CRYPT_XOR, (new NscaClient(self::NAGIOS))->getCryptMethod());
   }
 
   #[@test]
   public function encrypt() {
-    $client= new NscaClient('nagios.xp-framework.net', 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR);
+    $client= new NscaClient(self::NAGIOS, 5667, NscaProtocol::VERSION_3, NscaProtocol::CRYPT_XOR);
     $client->setTimestamp(base64_decode('S4/Vfw=='));
     $client->setXorKey(base64_decode(
       'enBVWg+sbQJRHBp4YmoAd14qYPF1EwahKFmzQGwwfOah0UGxfq6zz8vNSC03SKW'.
