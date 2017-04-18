@@ -3,6 +3,10 @@ nsca ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 5.1.2 / 2017-04-18
+
+* Added compatibility with `xp-framework/networking` 8.x - @thekid
+
 ## 5.1.1 / 2016-10-01
 
 * Fixed issue #1: Wrong constant name - @emil-nasso, @thekid
