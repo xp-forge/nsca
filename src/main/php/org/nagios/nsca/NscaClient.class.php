@@ -256,7 +256,7 @@ class NscaClient extends \lang\Object {
    * @return  string
    */
   public function prepare(NscaMessage $message) {
-    $v= hexdec(crc32($this->pack(0, $message)));
+    $v= crc32($this->pack(0, $message));
     if ($v > 2147483647) {
       $v= (int)($v - 4294967296);
     }
