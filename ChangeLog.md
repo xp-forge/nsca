@@ -3,6 +3,8 @@ nsca ChangeLog
 
 ## ?.?.? / ????-??-??
 
+* Dropped dependency on `xp-framework/security` - @thekid
+
 ## 5.1.2 / 2017-04-18
 
 * Added compatibility with `xp-framework/networking` 8.x - @thekid
