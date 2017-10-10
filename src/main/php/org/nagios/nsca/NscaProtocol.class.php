@@ -5,7 +5,7 @@
  *
  * @test  xp://org.nagios.unittest.NscaProtocolTest
  */
-abstract class NscaProtocol extends \lang\Object {
+abstract class NscaProtocol {
   const VERSION_2   = 2;
   const VERSION_3   = 3;
 

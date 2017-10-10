@@ -35,7 +35,7 @@ define('NSCA_CRYPT_XOR',  0x0001);
  * @see   http://nagios.sourceforge.net/download/cvs/nsca-cvs.tar.gz
  * @see   http://jasonplancaster.com/projects/scripts/send_nsca/send_nsca_pl.source  
  */
-class NscaClient extends \lang\Object {
+class NscaClient {
   public
     $sock         = null,
     $version      = 0,

@@ -30,7 +30,7 @@ use io\IOException;
  *
  * @see      http://nagios.org/
  */
-class Heartbeat extends \lang\Object {
+class Heartbeat {
   public $server, $port, $version, $service, $host;
   protected static $instance= null;
 

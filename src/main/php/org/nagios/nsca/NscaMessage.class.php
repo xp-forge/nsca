@@ -10,7 +10,7 @@ define('NSCA_UNKNOWN',   0x0003);
  *
  * @see   xp://org.nagios.nsca.NscaClient#send
  */
-class NscaMessage extends \lang\Object {
+class NscaMessage {
   public
     $host         = '',
     $service      = '',
