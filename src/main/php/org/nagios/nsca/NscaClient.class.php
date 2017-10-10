@@ -1,7 +1,6 @@
 <?php namespace org\nagios\nsca;
 
 use peer\Socket;
-use security\checksum\CRC32;
 use lang\MethodNotImplementedException;
 use lang\IllegalStateException;
 use lang\IllegalArgumentException;
@@ -257,10 +256,14 @@ class NscaClient extends \lang\Object {
    * @return  string
    */
   public function prepare(NscaMessage $message) {
+    $v= hexdec(crc32($this->pack(0, $message)));
+    if ($v > 2147483647) {
+      $v= (int)($v - 4294967296);
+    }
 
     // Calculate CRC32 checksum, then build the final packet with the sig
     // and encrypt it using defined crypt method
-    return $this->encrypt($this->pack(CRC32::fromString($this->pack(0, $message))->asInt32(), $message));
+    return $this->encrypt($this->pack($v, $message));
   }
 
   /**
