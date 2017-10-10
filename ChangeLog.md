@@ -3,6 +3,10 @@ nsca ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 6.0.0 / 2017-10-10
+
+* **Heads up: Drop PHP 5.5 support!** - @thekid
+* Added compatibility with XP9, PHP 7.2 - @thekid
 * Dropped dependency on `xp-framework/security` - @thekid
 
 ## 5.1.2 / 2017-04-18
