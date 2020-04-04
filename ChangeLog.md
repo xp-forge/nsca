@@ -3,6 +3,10 @@ nsca ChangeLog
 
 ## ?.?.? / ????-??-??
 
+## 6.0.1 / 2020-04-04
+
+* Made compatible with XP 10 - @thekid
+
 ## 6.0.0 / 2017-10-10
 
 * **Heads up: Drop PHP 5.5 support!** - @thekid
