@@ -1,9 +1,8 @@
 <?php namespace org\nagios\nsca;
 
-use lang\System;
-use util\log\Logger;
-use peer\URL;
 use io\IOException;
+use peer\URL;
+use util\log\Logger;
 
 /**
  * Heartbeat sender.
@@ -59,7 +58,7 @@ class Heartbeat {
     $this->port=    $url->getPort(5667);
     $this->version= $url->getParam('version', NscaProtocol::VERSION_2);
     $this->service= trim($url->getPath(), '/');
-    $this->host=    $url->getParam('hostname', System::getProperty('host.name'));
+    $this->host=    $url->getParam('hostname', gethostname());
     if (false !== $url->getParam('domain', false)) {
       $this->host.= '.'.ltrim($url->getParam('domain'), '.');
     }
