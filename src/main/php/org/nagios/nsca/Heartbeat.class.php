@@ -97,4 +97,3 @@ class Heartbeat {
     $nsca->close();
   }
 }
-

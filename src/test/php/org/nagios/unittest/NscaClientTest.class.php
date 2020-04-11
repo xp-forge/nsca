@@ -1,8 +1,6 @@
 <?php namespace org\nagios\unittest;
 
-use org\nagios\nsca\NscaClient;
-use org\nagios\nsca\NscaMessage;
-use org\nagios\nsca\NscaProtocol;
+use org\nagios\nsca\{NscaClient, NscaMessage, NscaProtocol};
 
 class NscaClientTest extends \unittest\TestCase {
   const NAGIOS = 'nagios.example.com';

@@ -1,9 +1,7 @@
 <?php namespace org\nagios\nsca;
 
+use lang\{IllegalArgumentException, IllegalStateException, MethodNotImplementedException};
 use peer\Socket;
-use lang\MethodNotImplementedException;
-use lang\IllegalStateException;
-use lang\IllegalArgumentException;
 
 define('NSCA_VERSION_2',  2);
 define('NSCA_VERSION_3',  3);
