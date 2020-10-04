@@ -1,6 +1,7 @@
 <?php namespace org\nagios\unittest;
 
 use org\nagios\nsca\Heartbeat;
+use unittest\Test;
 
 /**
  * Test heartbeat class
@@ -19,13 +20,13 @@ class HeartbeatTest extends \unittest\TestCase {
     $this->fixture= new Heartbeat();
   }
   
-  #[@test]
+  #[Test]
   public function domain() {
     $this->fixture->setup('nagios://nagios.xp-framework.net:5667/servicename?hostname=client&domain=xp-framework.net');
     $this->assertEquals('client.xp-framework.net', $this->fixture->host);
   }
 
-  #[@test]
+  #[Test]
   public function domain_with_leading_dot() {
     $this->fixture->setup('nagios://nagios.xp-framework.net:5667/servicename?hostname=client&domain=xp-framework.net');
     $this->assertEquals('client.xp-framework.net', $this->fixture->host);
